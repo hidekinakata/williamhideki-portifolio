@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarType> = (props) => {
             }
           >
             {sectionLinks.map(({ name, link }) => (
-              <motion.li variants={childrenVariants}>
+              <motion.li key={name} variants={childrenVariants}>
                 <Link
                   className={
                     "relative p-2 font-mono transition-all hover:text-primary-400"

@@ -43,7 +43,7 @@ const Email: React.FC<EmailType> = (props) => {
       setShowCopyPopup(false);
       resetCountdown();
     }
-  }, [count]);
+  }, [count, resetCountdown]);
 
   return (
     <motion.div
