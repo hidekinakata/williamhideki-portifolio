@@ -1,5 +1,5 @@
 import "./globals.css";
-import { DM_Mono, Mochiy_Pop_One, Outfit, Rampart_One } from "next/font/google";
+import { DM_Mono, Mochiy_Pop_One, Outfit } from "next/font/google";
 
 const font_mono = DM_Mono({
   weight: ["400", "500", "300"],
@@ -13,9 +13,9 @@ const font_sans = Outfit({
   variable: "--font-sans",
 });
 
-const font_jp = Rampart_One({
+const font_jp = Mochiy_Pop_One({
   weight: "400",
-  subsets: ["latin-ext"],
+  subsets: ["latin"],
   variable: "--font-jp",
 });
 
