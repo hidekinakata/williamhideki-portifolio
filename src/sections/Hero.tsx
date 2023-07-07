@@ -75,7 +75,7 @@ const Hero: React.FC<HeroType> = (props) => {
       variants={sectionVariant}
       initial={"hidden"}
       animate={"show"}
-      className={"pt-20"}
+      className={"pt-20 max-lg:pt-5"}
     >
       {/*roles*/}
       <motion.div
@@ -127,8 +127,10 @@ const Hero: React.FC<HeroType> = (props) => {
         I work as a freelance web developer. I specialize in frontend
         development and also have a background in machine learning projects.
       </motion.p>
-      <motion.div variants={childsVariant} className={"mt-10"}>
-        <Button href={"/#projects"}>Check my projects</Button>
+      <motion.div variants={childsVariant} className={"mt-12"}>
+        <Button href={"/#projects"} className={"!px-6 !py-5"}>
+          Check my projects
+        </Button>
       </motion.div>
     </ContentSection>
   );

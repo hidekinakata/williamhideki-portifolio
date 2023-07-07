@@ -36,7 +36,7 @@ const Socials: React.FC<SocialsType> = (props) => {
   ];
   return (
     <motion.div
-      className="fixed bottom-0 left-12 max-lg:left-6 "
+      className="fixed bottom-0 left-12 max-lg:left-6 max-md:hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{

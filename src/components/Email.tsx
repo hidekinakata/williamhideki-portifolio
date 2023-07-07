@@ -47,7 +47,7 @@ const Email: React.FC<EmailType> = (props) => {
 
   return (
     <motion.div
-      className="fixed bottom-0 right-12 max-lg:right-6"
+      className="fixed bottom-0 right-12 max-lg:right-6 max-md:hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
