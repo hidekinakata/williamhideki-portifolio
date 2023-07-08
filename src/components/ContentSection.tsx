@@ -14,7 +14,7 @@ const ContentSection: React.FC<ContentSectionType> = ({
       {...props}
       className={
         className +
-        " flex h-screen min-h-screen w-full flex-col items-start justify-center "
+        " flex w-full flex-col items-start justify-center first:h-screen first:min-h-screen "
       }
     >
       {children}

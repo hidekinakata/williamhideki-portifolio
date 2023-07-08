@@ -25,7 +25,7 @@ export default function Home() {
           <Socials />
           <Email />
 
-          <main className="flex min-h-screen flex-col items-center justify-between px-48 transition-all max-lg:px-6">
+          <main className="flex min-h-screen flex-col items-center justify-between px-36 transition-all max-lg:px-6">
             <Hero />
             <About />
             {/*<Experience />*/}
