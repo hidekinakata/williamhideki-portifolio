@@ -7,6 +7,17 @@ body {
   @apply text-white/80;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-primary-950
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-900/60 rounded-xl
+
+}
+
 
 @layer components {
   .icon{
