@@ -6,6 +6,7 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import Button from "@/components/Button";
 import { LuMail } from "react-icons/lu";
 import LanguageToggle from "@/components/LanguageToggle";
+import useScrollBehavior from "@/hooks/useScrollBehavior";
 
 type NavbarType = {};
 
@@ -40,12 +41,21 @@ const childrenVariants: Variants = {
 const navVariants: Variants = {
   hidden: {
     translateY: "-100%",
+    boxShadow: "none",
+    transition: {
+      ease: "easeInOut",
+    },
+  },
+  visibleTop: {
+    translateY: 0,
+    boxShadow: "none",
     transition: {
       ease: "easeInOut",
     },
   },
   visible: {
     translateY: 0,
+    boxShadow: "0px 4px 20px rgb(0 0 0 / 0.3)",
     transition: {
       ease: "easeInOut",
     },
@@ -59,27 +69,35 @@ const Navbar: React.FC<NavbarType> = (props) => {
     { name: "Contact", link: "/#contact" },
   ];
 
-  const [navbarVisible, setNavbarVisible] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 100 ? setNavbarVisible(true) : setNavbarVisible(false);
-    });
-  }, []);
+  const scrollBehavior = useScrollBehavior();
+
+  const behaviorMap = {
+    onTop: "visibleTop",
+    scrollDown: "hidden",
+    scrollUp: "visible",
+  };
+
+  // const [navbarVisible, setNavbarVisible] = useState(false);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     window.scrollY > 100 ? setNavbarVisible(true) : setNavbarVisible(false);
+  //   });
+  // }, []);
 
   return (
     <AnimatePresence>
       <motion.nav
         variants={navVariants}
         initial={"visible"}
-        animate={!navbarVisible ? "visible" : "hidden"}
+        animate={behaviorMap[scrollBehavior]}
         className={
-          "fixed flex min-h-[100px] w-full items-center px-12 pb-6 pt-12 max-lg:px-6 max-lg:pb-3  max-lg:pt-6"
+          "fixed z-50 flex min-h-[100px] w-full items-center px-12 pb-6 pt-12 backdrop-blur-md max-lg:px-6  max-lg:pb-3 max-lg:pt-6"
         }
       >
         <motion.div
           variants={mainVariants}
           initial={"hidden"}
-          animate={"visible"}
+          animate={scrollBehavior === "scrollDown" ? "hidden" : "visible"}
           className={"relative flex w-full items-center justify-between "}
         >
           <motion.div variants={childrenVariants}>
