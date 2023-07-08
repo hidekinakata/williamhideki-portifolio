@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Socials from "@/components/Socials";
 import Email from "@/components/Email";
 import Hero from "@/sections/Hero";
+import About from "@/sections/About";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,10 @@ export default function Home() {
 
           <main className="flex min-h-screen flex-col items-center justify-between px-48 transition-all max-lg:px-6">
             <Hero />
+            <About />
+            {/*<Experience />*/}
+            {/*<Projects />*/}
+            {/*<Contact />*/}
           </main>
         </>
       )}
