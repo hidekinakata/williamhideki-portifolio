@@ -1,14 +1,18 @@
 import React from "react";
 import Link from "next/link";
 
-interface ButtonType extends React.HTMLAttributes<"button"> {
-  href: string;
-}
+interface ButtonType extends React.HTMLProps<"a"> {}
 
-const Button: React.FC<ButtonType> = ({ href, children, className }) => {
+const Button: React.FC<ButtonType> = ({
+  href,
+  children,
+  className,
+  target,
+}) => {
   return (
     <Link
-      href={href}
+      href={href ?? ""}
+      target={target}
       className={
         className +
         " flex items-center justify-center rounded border border-emphasis-300 bg-transparent px-4 py-3 font-mono text-emphasis-300 outline-none transition max-lg:px-3 max-lg:py-2 max-lg:text-sm " +
