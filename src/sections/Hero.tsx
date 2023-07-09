@@ -3,6 +3,7 @@ import { motion, Variant, Variants } from "framer-motion";
 import ContentSection from "@/components/ContentSection";
 import Button from "@/components/Button";
 import { useCounter, useInterval } from "usehooks-ts";
+import Image from "next/image";
 
 type HeroType = {};
 
@@ -75,8 +76,22 @@ const Hero: React.FC<HeroType> = (props) => {
       variants={sectionVariant}
       initial={"hidden"}
       animate={"show"}
-      className={"pt-20 max-lg:pt-5"}
+      className={"relative   pt-32 max-md:pt-5 "}
     >
+      <div
+        className={
+          "absolute left-[60%] top-1/2 -z-10 h-full w-full -translate-y-1/2 " +
+          "after:absolute after:left-0 after:top-0 after:h-full after:w-[110%] after:bg-gradient-to-r after:from-primary-950 after:from-10% after:to-primary-950/90 after:content-['']"
+        }
+      >
+        <Image
+          src="/husky_face.png"
+          width={1024}
+          height={1024}
+          alt="Picture of low polygon husky"
+          className={"absolute  min-h-full object-contain "}
+        />
+      </div>
       {/*roles*/}
       <motion.div
         variants={childsVariant}
