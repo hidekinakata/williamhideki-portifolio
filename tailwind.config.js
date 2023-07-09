@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = {
-  "cornflower-blue": {
+  "electric-violet": {
     50: "#ebecff",
     100: "#daddff",
     200: "#bdc0ff",
@@ -14,7 +14,7 @@ const colors = {
     900: "#381f90",
     950: "#130a2e",
   },
-  aquamarine: {
+  "caribbean-green": {
     50: "#eefff7",
     100: "#d7ffee",
     200: "#b2ffde",
@@ -49,8 +49,8 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: colors["cornflower-blue"],
-        emphasis: colors["aquamarine"],
+        primary: colors["electric-violet"],
+        emphasis: colors["caribbean-green"],
       },
     },
   },
