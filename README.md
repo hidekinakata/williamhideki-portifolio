@@ -2,7 +2,6 @@
 ### Made with Next.js
 
 ## Technologies Used
-_____
 The following technologies were used to create this portfolio:
 
 - Next.js
@@ -13,7 +12,6 @@ The following technologies were used to create this portfolio:
 - React icons (for icons)
 
 ## 🛠 Installation & Set Up
-_____
 1. Install dependencies
 
    ```sh
@@ -27,7 +25,6 @@ _____
    ```
 
 ## 🚀 Build and Run for Production
-_____
 
 1. Generate a full static production build
 
