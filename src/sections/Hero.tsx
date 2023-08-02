@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { motion, Variant, Variants } from "framer-motion";
 import ContentSection from "@/components/ContentSection";
@@ -76,22 +78,22 @@ const Hero: React.FC<HeroType> = (props) => {
       variants={sectionVariant}
       initial={"hidden"}
       animate={"show"}
-      className={"relative   pt-32 max-md:pt-5 "}
+      className={"relative  !w-[70%] pt-32 max-md:!w-full max-md:pt-5"}
     >
-      <div
-        className={
-          "absolute left-[60%] top-1/2 -z-10 h-full w-full -translate-y-1/2 " +
-          "after:absolute after:left-0 after:top-0 after:h-full after:w-[110%] after:bg-gradient-to-r after:from-primary-950 after:from-10% after:to-primary-950/90 after:content-['']"
-        }
-      >
-        <Image
-          src="/husky_face.png"
-          width={1024}
-          height={1024}
-          alt="Picture of low polygon husky"
-          className={"absolute  min-h-full object-contain "}
-        />
-      </div>
+      {/*<div*/}
+      {/*  className={*/}
+      {/*    "absolute left-[60%] top-1/2 -z-10 h-full w-full -translate-y-1/2 ov" +*/}
+      {/*    "after:absolute after:left-0 after:top-0 after:h-full after:w-[110%] after:bg-gradient-to-r after:from-primary-950 after:from-10% after:to-primary-950/90 after:content-['']"*/}
+      {/*  }*/}
+      {/*>*/}
+      {/*  <Image*/}
+      {/*    src="/husky_face.png"*/}
+      {/*    width={1024}*/}
+      {/*    height={1024}*/}
+      {/*    alt="Picture of low polygon husky"*/}
+      {/*    className={"absolute  min-h-full object-contain "}*/}
+      {/*  />*/}
+      {/*</div>*/}
       {/*roles*/}
       <motion.div
         variants={childsVariant}
@@ -121,7 +123,9 @@ const Hero: React.FC<HeroType> = (props) => {
       {/*name*/}
       <motion.h1
         variants={childsVariant}
-        className={" text-[clamp(2.1rem,8vw,8vh)] font-bold leading-none"}
+        className={
+          " text-[clamp(2.1rem,8vw,8vh)] font-bold leading-none text-white"
+        }
       >
         William Hideki
       </motion.h1>
