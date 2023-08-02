@@ -3,28 +3,44 @@
 @tailwind utilities;
 
 body {
-  @apply bg-primary-950;
-  @apply text-white/80;
+    @apply bg-primary-950;
+    @apply text-white/70;
+}
+
+::-moz-selection {
+    @apply text-white bg-primary-900
+
+}
+
+::selection {
+    @apply text-white bg-primary-900
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
-::-webkit-scrollbar-track {
-  @apply bg-primary-950
-}
-::-webkit-scrollbar-thumb {
-  @apply bg-primary-900/60 rounded-xl
 
+::-webkit-scrollbar-track {
+    @apply bg-primary-950
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-primary-900/60 rounded-xl
+
+}
+
+html,
+body {
+    scroll-behavior: smooth !important;
 }
 
 
 @layer components {
-  .icon{
-    @apply transition p-3 text-white/70 hover:text-emphasis-300  hover:-translate-y-1
-  }
+    .icon {
+        @apply transition p-3 text-white/70 hover:text-emphasis-300  hover:-translate-y-1
+    }
 
-  .clippath-tri {
-    clip-path: polygon(0 0, 95% 0, 95% 40%, 100% 50%, 95% 60%, 95% 100%, 0 100%);
-  }
+    .clippath-tri {
+        clip-path: polygon(0 0, 95% 0, 95% 40%, 100% 50%, 95% 60%, 95% 100%, 0 100%);
+    }
 }
