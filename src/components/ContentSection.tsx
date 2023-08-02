@@ -13,8 +13,10 @@ const ContentSection: React.FC<ContentSectionType> = ({
     <motion.section
       {...props}
       className={
-        className +
-        " flex w-full flex-col items-start justify-center first:min-h-screen "
+        "flex  flex-col items-start justify-center transition-all first:min-h-screen max-lg:w-full " +
+        "[&:nth-child(even)>h1.section-title]:flex-row-reverse [&:nth-child(even)>h1.section-title]:place-self-start " +
+        "[&:nth-child(odd)>h1.section-title]:flex-row [&:nth-child(odd)>h1.section-title]:place-self-end " +
+        (className ?? "")
       }
     >
       {children}

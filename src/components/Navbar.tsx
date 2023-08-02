@@ -1,11 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { CgClose } from "react-icons/cg";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import Button from "@/components/Button";
-import { LuMail } from "react-icons/lu";
-import LanguageToggle from "@/components/LanguageToggle";
 import useScrollBehavior from "@/hooks/useScrollBehavior";
 
 type NavbarType = {};
@@ -49,6 +47,8 @@ const navVariants: Variants = {
   visibleTop: {
     translateY: 0,
     boxShadow: "none",
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
     transition: {
       ease: "easeInOut",
     },
@@ -56,6 +56,8 @@ const navVariants: Variants = {
   visible: {
     translateY: 0,
     boxShadow: "0px 4px 20px rgb(0 0 0 / 0.3)",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
     transition: {
       ease: "easeInOut",
     },
@@ -77,13 +79,6 @@ const Navbar: React.FC<NavbarType> = (props) => {
     scrollUp: "visible",
   };
 
-  // const [navbarVisible, setNavbarVisible] = useState(false);
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     window.scrollY > 100 ? setNavbarVisible(true) : setNavbarVisible(false);
-  //   });
-  // }, []);
-
   return (
     <AnimatePresence>
       <motion.nav
@@ -91,13 +86,14 @@ const Navbar: React.FC<NavbarType> = (props) => {
         initial={"visible"}
         animate={behaviorMap[scrollBehavior]}
         className={
-          "fixed z-50 flex min-h-[100px] w-full items-center px-12 pb-6 pt-12 backdrop-blur-md max-lg:px-6  max-lg:pb-3 max-lg:pt-6"
+          "fixed z-50 flex min-h-[100px] w-full items-center bg-primary-950/50 px-48" +
+          " pb-3 pt-3 backdrop-blur-md max-lg:px-6 "
         }
       >
         <motion.div
           variants={mainVariants}
           initial={"hidden"}
-          animate={scrollBehavior === "scrollDown" ? "hidden" : "visible"}
+          animate={"visible"}
           className={"relative flex w-full items-center justify-between "}
         >
           <motion.div variants={childrenVariants}>
@@ -119,8 +115,11 @@ const Navbar: React.FC<NavbarType> = (props) => {
           >
             {/*<LanguageToggle />*/}
             <div className={"grid grid-cols-[auto_auto] "}>
-              <Button href={""}>Resume</Button>
+              <Button href={"/william_hideki_resume.pdf"} target={"_blank"}>
+                Resume
+              </Button>
             </div>
+            <div>{/*<HamMenu />*/}</div>
           </motion.div>
 
           <motion.ul
@@ -145,6 +144,22 @@ const Navbar: React.FC<NavbarType> = (props) => {
         </motion.div>
       </motion.nav>
     </AnimatePresence>
+  );
+};
+
+const HamMenu: React.FC<{ opened: boolean }> = ({ opened }) => {
+  return (
+    <button>
+      <div
+        className={
+          "relative h-8 w-8 [&>span]:absolute [&>span]:right-0  [&>span]:h-0.5 [&>span]:bg-emphasis-300"
+        }
+      >
+        <span className={" top-[25%]  w-[66%]"}></span>
+        <span className={"top-1/2  w-[100%]"}></span>
+        <span className={" top-[75%]  w-[33%]"}></span>
+      </div>
+    </button>
   );
 };
 
