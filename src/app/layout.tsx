@@ -20,8 +20,25 @@ const font_jp = Mochiy_Pop_One({
 });
 
 export const metadata = {
-  title: "William Hideki portifolio",
-  description: "William Hideki personal portifolio",
+  title: "William Hideki",
+  description:
+    "My dev portfolio, take a look and get in touch! This  portfolio was built on Next.js 13, Framer motion and Tailwindcss",
+  icons: {
+    icon: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        url: "/favicon/favicon-16x16.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon/favicon-32x32.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
