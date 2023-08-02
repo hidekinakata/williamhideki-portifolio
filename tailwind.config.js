@@ -3,15 +3,15 @@
 const colors = {
   "electric-violet": {
     50: "#ebecff",
-    100: "#daddff",
+    100: "#dbdeff",
     200: "#bdc0ff",
-    300: "#9596ff",
-    400: "#786bff",
-    500: "#6749ff",
-    600: "#5d29ff",
-    700: "#511de5",
-    800: "#421bb8",
-    900: "#381f90",
+    300: "#9496ff",
+    400: "#776bff",
+    500: "#6647ff",
+    600: "#531aff",
+    700: "#4718c9",
+    800: "#351692",
+    900: "#23145d",
     950: "#130a2e",
   },
   "caribbean-green": {
@@ -43,6 +43,9 @@ module.exports = {
       jp: ["var(--font-jp)", "sans-serif"],
     },
     extend: {
+      height: {
+        128: "32rem",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
