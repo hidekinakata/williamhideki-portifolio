@@ -51,15 +51,15 @@ const About: React.FC<AboutType> = () => {
             my knowledge for possible opportunities.
           </p>
           <p>
-            Don't hesitate to{" "}
+            {"Don't hesitate to "}
             <span className={"cursor-pointer text-emphasis-300"}>
               get in touch
             </span>{" "}
-            if you need an expert who is passionate and committed to your
-            projects. I am constantly looking forward to taking on new
-            challenges. Together, let's make something amazing!
+            {
+              "if you need an expert who is passionate and committed to your projects. I am constantly looking forward to taking on new challenges. Together, let's make something amazing!"
+            }
           </p>
-          <p>Some technologies I've worked with recently:</p>
+          <p>{"Some technologies I've worked with recently:"}</p>
           <div className={"grid grid-cols-2"}>
             <div>
               <h2 className={"text-white/90"}>Web</h2>

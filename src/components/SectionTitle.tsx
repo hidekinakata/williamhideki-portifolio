@@ -11,7 +11,6 @@ const SectionTitle: React.FC<SectionTitleType> = ({ sectionName }) => {
         " section-title relative mb-10 mt-3 flex w-[60%]  items-center justify-end gap-4 whitespace-nowrap text-3xl font-semibold max-lg:w-full " +
         "before:block before:h-0.5 before:w-full before:bg-white/10 before:content-[''] "
       }
-      aria-description={"section-title"}
     >
       {sectionName}
       <span

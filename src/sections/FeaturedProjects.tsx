@@ -33,7 +33,6 @@ const FeaturedProjects: React.FC<FeaturedProjectsType> = (props) => {
       />
 
       <ProjectShowcase
-        
         title={"William Hideki Portifolio"}
         description={
           "My personal portifolio, made with Next.js 13. Made to show a little about me and my work. In addition to exploring the basics of html, css, javascript (typescript) and current libraries such as Tailwindcss and Framer Motion"

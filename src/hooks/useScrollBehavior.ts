@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type Behavior = "onTop" | "scrollDown" | "scrollUp";
 
@@ -15,10 +15,10 @@ export default function useScrollBehavior() {
     return behavior;
   };
 
-  const handle = (e: any) => {
+  const handle = useCallback((e: any) => {
     const currentBehavior = verifyScrollBehavior();
     setBehavior(currentBehavior);
-  };
+  }, []);
 
   const [behavior, setBehavior] = useState(verifyScrollBehavior());
 
