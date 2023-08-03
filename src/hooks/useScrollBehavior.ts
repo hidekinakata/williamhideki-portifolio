@@ -2,11 +2,12 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-type Behavior = "onTop" | "scrollDown" | "scrollUp";
+export type Behavior = "onTop" | "scrollDown" | "scrollUp";
 
 export default function useScrollBehavior() {
   const prevScrollY = useRef(0);
   const verifyScrollBehavior = (): Behavior => {
+    if (typeof window === "undefined") return "onTop";
     const currentScrollPos = window.scrollY;
     let behavior: Behavior | null;
     if (currentScrollPos === 0) behavior = "onTop";
@@ -25,6 +26,7 @@ export default function useScrollBehavior() {
   const [behavior, setBehavior] = useState(verifyScrollBehavior());
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     window.addEventListener("scroll", handle);
     return () => window.removeEventListener("scroll", handle);
   }, [prevScrollY, behavior, handle]);

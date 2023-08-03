@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import Button from "@/components/Button";
-import useScrollBehavior from "@/hooks/useScrollBehavior";
+import useScrollBehavior, { Behavior } from "@/hooks/useScrollBehavior";
 
 type NavbarType = {};
 
@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarType> = (props) => {
     { name: "Contact", link: "/#contact" },
   ];
 
-  const scrollBehavior = useScrollBehavior();
+  const scrollBehavior: Behavior = useScrollBehavior();
 
   const behaviorMap = {
     onTop: "visibleTop",
@@ -144,22 +144,6 @@ const Navbar: React.FC<NavbarType> = (props) => {
         </motion.div>
       </motion.nav>
     </AnimatePresence>
-  );
-};
-
-const HamMenu: React.FC<{ opened: boolean }> = ({ opened }) => {
-  return (
-    <button>
-      <div
-        className={
-          "relative h-8 w-8 [&>span]:absolute [&>span]:right-0  [&>span]:h-0.5 [&>span]:bg-emphasis-300"
-        }
-      >
-        <span className={" top-[25%]  w-[66%]"}></span>
-        <span className={"top-1/2  w-[100%]"}></span>
-        <span className={" top-[75%]  w-[33%]"}></span>
-      </div>
-    </button>
   );
 };
 
